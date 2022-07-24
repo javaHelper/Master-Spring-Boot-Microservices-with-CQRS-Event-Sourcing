@@ -202,13 +202,13 @@ db.getCollection('users').find({})
 
 -------------
 
-- Get All Users
+# Get All Users
 GET -> `http://localhost:8092/api/v1/userLookup/`
 
-- Get User By UserId
+# Get User By UserId
 GET -> `http://localhost:8092/api/v1/userLookup/byId/4a299492-b7b9-4e9a-a69b-2e808e894408`
 
-- Search User By Filter
+# Search User By Filter
 - GET -> `http://localhost:8092/api/v1/userLookup/byFilter/@springbank.com`
 
 - GET -> `http://localhost:8092/api/v1/userLookup/byFilter/john`
