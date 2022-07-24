@@ -2,6 +2,8 @@
 
 - Note: User with `WRITE_PRIVILEDGE` should be able to create user and use with `READ_PRIVILEDGE` should only be able to read data.
 
+Goto https://www.base64encode.org/ and `springbankClient:springbankSecret` and get encoded value `c3ByaW5nYmFua0NsaWVudDpzcHJpbmdiYW5rU2VjcmV0`
+
 # Create Token!
 
 ```sh
