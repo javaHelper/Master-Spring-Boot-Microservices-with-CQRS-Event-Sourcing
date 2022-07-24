@@ -244,5 +244,6 @@ Response:
 }
 ```
 
+- Note: User with `WRITE_PRIVILEDGE` should be able to create user and use with `READ_PRIVILEDGE` should only be able to read data.
 
 
