@@ -200,6 +200,8 @@ db.getCollection('users').find({})
 }
 ```
 
+-------------
+
 - Get All Users
 GET -> `http://localhost:8092/api/v1/userLookup/`
 
@@ -207,10 +209,10 @@ GET -> `http://localhost:8092/api/v1/userLookup/`
 GET -> `http://localhost:8092/api/v1/userLookup/byId/4a299492-b7b9-4e9a-a69b-2e808e894408`
 
 - Search User By Filter
-GET -> `http://localhost:8092/api/v1/userLookup/byFilter/@springbank.com`
+- GET -> `http://localhost:8092/api/v1/userLookup/byFilter/@springbank.com`
 
-GET -> `http://localhost:8092/api/v1/userLookup/byFilter/john`
+- GET -> `http://localhost:8092/api/v1/userLookup/byFilter/john`
 
-GET -> `http://localhost:8092/api/v1/userLookup/byFilter/jane`
+- GET -> `http://localhost:8092/api/v1/userLookup/byFilter/jane`
 
-GET -> `http://localhost:8092/api/v1/userLookup/byFilter/Doe`
+- GET -> `http://localhost:8092/api/v1/userLookup/byFilter/Doe`
