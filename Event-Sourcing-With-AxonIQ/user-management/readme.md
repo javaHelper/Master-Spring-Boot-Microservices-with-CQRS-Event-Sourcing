@@ -1,5 +1,6 @@
 # Event Sourcing using CQRS and AXONIQ
 
+# Create User
 POST ->
 
 ```sh
@@ -61,6 +62,7 @@ curl --location --request POST 'http://localhost:8091/api/v1/registerUser' \
 }'
 ```
 
+# Update User By Id
 PUT ->
 
 ```sh
@@ -82,6 +84,7 @@ curl --location --request PUT 'http://localhost:8091/api/v1/updateUser/b76b6640-
 }'
 ```
 
+# Delete User By Id
 DELETE ->
 
 ```sh
