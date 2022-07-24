@@ -1,4 +1,4 @@
-#
+# Event Sourcing using CQRS and AXONIQ
 
 POST ->
 
@@ -199,3 +199,18 @@ db.getCollection('users').find({})
     "eventIdentifier" : "bd619d15-e0c0-4b36-9fee-0ee1af2c52aa"
 }
 ```
+
+- Get All Users
+GET -> `http://localhost:8092/api/v1/userLookup/`
+
+- Get User By UserId
+GET -> `http://localhost:8092/api/v1/userLookup/byId/4a299492-b7b9-4e9a-a69b-2e808e894408`
+
+- Search User By Filter
+GET -> `http://localhost:8092/api/v1/userLookup/byFilter/@springbank.com`
+
+GET -> `http://localhost:8092/api/v1/userLookup/byFilter/john`
+
+GET -> `http://localhost:8092/api/v1/userLookup/byFilter/jane`
+
+GET -> `http://localhost:8092/api/v1/userLookup/byFilter/Doe`
