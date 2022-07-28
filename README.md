@@ -1,5 +1,7 @@
 # Master-Spring-Boot-Microservices-with-CQRS-Event-Sourcing
 
+Aggregate is the primary component in the command API, its where commands are handled events are raised, state of aggregate is altered and evets are stored to events store and publish to event bus 
+
 # Setup AxonIQ
 
 ```sh
