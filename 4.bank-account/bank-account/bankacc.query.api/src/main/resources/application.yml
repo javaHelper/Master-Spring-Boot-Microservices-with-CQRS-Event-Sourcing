@@ -1,0 +1,30 @@
+server:
+  port: 9072
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: bank
+  jpa:
+    show-sql: true
+    hibernate:
+      dll-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/bank?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: Password
+
+
+
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: springbankSigningKey
+
