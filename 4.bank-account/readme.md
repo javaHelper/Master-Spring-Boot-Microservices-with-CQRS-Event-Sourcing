@@ -107,9 +107,31 @@ curl --location --request POST 'http://localhost:9071/api/v1/openBankAccount' \
 Response:
 
 ```
-
-```json
 {
     "message": "successfully opened a new bank account!",
     "id": "1dabfabc-f9d5-4b08-b967-0608642daf97"
 }
+```json
+
+
+# Deposite Funds
+
+```sh
+curl --location --request PUT 'http://localhost:2000/api/v1/depositFunds/0cdfe416-7b3c-4582-8c22-3cd77a376b6a' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwNjk0MDAsInVzZXJfbmFtZSI6ImpvaG5kIiwiYXV0aG9yaXRpZXMiOlsiUkVBRF9QUklWSUxFREdFIiwiV1JJVEVfUFJJVklMRURHRSJdLCJqdGkiOiJNcjI1amRjYjVXcl9yZG5XTmNydnJBRG96eU0iLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.ea5MWgUjqJCJcLpMc1_LFUwaiqABVO1tD_JtL__Myko' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "amount": 50.0
+}'
+```
+
+Response:
+
+```
+{
+    "message": "Funds successfully deposited!"
+}
+```
+
+<img width="1049" alt="Screenshot 2022-07-29 at 10 33 52 AM" src="https://user-images.githubusercontent.com/54174687/181686436-89f5eade-2808-416c-a500-883684b02a7b.png">
+
