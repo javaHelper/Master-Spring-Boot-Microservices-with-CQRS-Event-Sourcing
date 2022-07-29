@@ -155,3 +155,16 @@ Response:
 ```
 
 <img width="753" alt="Screenshot 2022-07-29 at 11 19 31 AM" src="https://user-images.githubusercontent.com/54174687/181691462-ebc63e9c-a9da-4adb-9c3d-9c3f76cc7ae9.png">
+
+# Delete Bank Account
+
+```sh
+curl --location --request PUT 'http://localhost:2000/api/v1/closeBankAccount/0cdfe416-7b3c-4582-8c22-3cd77a376b6a' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwNzM5NTIsInVzZXJfbmFtZSI6ImpvaG5kIiwiYXV0aG9yaXRpZXMiOlsiUkVBRF9QUklWSUxFREdFIiwiV1JJVEVfUFJJVklMRURHRSJdLCJqdGkiOiJFTUo2eG1WMFZRZHp6cV90b2FaekdobXUwazQiLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.HfDjtPVOoCXw8aLj7sMhYE8f_tOBK4fZzteGqh0wZlY' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "amount": 99.0
+}'
+```
+
+
