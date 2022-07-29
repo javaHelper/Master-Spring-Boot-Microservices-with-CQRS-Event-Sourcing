@@ -167,4 +167,144 @@ curl --location --request PUT 'http://localhost:2000/api/v1/closeBankAccount/0cd
 }'
 ```
 
+- Add 3 bank Accounts from scratch for John, Jane, Mike
 
+
+```sh
+curl --location --request POST 'http://localhost:9071/api/v1/openBankAccount' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwNzQ1MDQsInVzZXJfbmFtZSI6ImpvaG5kIiwiYXV0aG9yaXRpZXMiOlsiUkVBRF9QUklWSUxFREdFIiwiV1JJVEVfUFJJVklMRURHRSJdLCJqdGkiOiJIekE3ZzVzRXdNbkZtRmxFd1NfRlhYcUgwX0UiLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.3boguviTOC7NbqYNNhWCWRJHKWuZLfZOPwpfnmcSvCo' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "accountHolderId": "9bae0a74-4f13-4833-91e3-59fda3e59d06",
+    "accountType": "CURRENT",
+    "openingBalance": 300.0
+}'
+```
+
+
+
+# Get All Accounts
+
+```sh
+curl --location --request GET 'http://localhost:2000/api/v1/bankAccountLookup/' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwNzQzMTUsInVzZXJfbmFtZSI6ImpvaG5kIiwiYXV0aG9yaXRpZXMiOlsiUkVBRF9QUklWSUxFREdFIiwiV1JJVEVfUFJJVklMRURHRSJdLCJqdGkiOiIxbTRONHBSMTRScG5pSHk0bllfRmhGdUM2b1EiLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.Pz40fp3ivdObH9ZxiXyTnbLMRJmi7Xvc7Th-HAqkHQ8' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "amount": 99.0
+}'
+```
+
+Response:
+
+```json
+{
+    "message": "Successfully Returned 3 Bank Account(s)!",
+    "accounts": [
+        {
+            "id": "97b0529d-411d-44e3-986f-b7c9ed1fed01",
+            "accountHolderId": "f599c03b-a9a3-4518-b191-d1541771ce2c",
+            "creationDate": "2022-07-29T05:57:49.027+00:00",
+            "accountType": "CURRENT",
+            "balance": 200.0
+        },
+        {
+            "id": "a9e3ab4f-6d9f-45ae-9134-346c53bf3a98",
+            "accountHolderId": "9bae0a74-4f13-4833-91e3-59fda3e59d06",
+            "creationDate": "2022-07-29T05:58:17.544+00:00",
+            "accountType": "CURRENT",
+            "balance": 300.0
+        },
+        {
+            "id": "f99addce-2d08-4d76-8cac-5973b9256856",
+            "accountHolderId": "4a299492-b7b9-4e9a-a69b-2e808e894408",
+            "creationDate": "2022-07-29T05:57:01.493+00:00",
+            "accountType": "SAVINGS",
+            "balance": 100.0
+        }
+    ]
+}
+```
+
+# Get Account By Id 
+
+```sh
+curl --location --request GET 'http://localhost:2000/api/v1/bankAccountLookup/byId/97b0529d-411d-44e3-986f-b7c9ed1fed01' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwNzQ2NjIsInVzZXJfbmFtZSI6ImpvaG5kIiwiYXV0aG9yaXRpZXMiOlsiUkVBRF9QUklWSUxFREdFIiwiV1JJVEVfUFJJVklMRURHRSJdLCJqdGkiOiJicFpjN0RadkhuSUFLSktGQTNsLUZDRkdHN2ciLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.B-Ir1Heb9qvzFcStpA03iblJkTbTZKJPjucES2Ekdew' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "amount": 99.0
+}'
+```
+
+Response:
+
+```json
+{
+    "message": "Bank Account Successfully Returned!",
+    "accounts": [
+        {
+            "id": "97b0529d-411d-44e3-986f-b7c9ed1fed01",
+            "accountHolderId": "f599c03b-a9a3-4518-b191-d1541771ce2c",
+            "creationDate": "2022-07-29T05:57:49.027+00:00",
+            "accountType": "CURRENT",
+            "balance": 200.0
+        }
+    ]
+}
+```
+
+# Get Account By HolderId
+
+```sh
+curl --location --request GET 'http://localhost:2000/api/v1/bankAccountLookup/byHolderId/f599c03b-a9a3-4518-b191-d1541771ce2c' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwNzQ2NjIsInVzZXJfbmFtZSI6ImpvaG5kIiwiYXV0aG9yaXRpZXMiOlsiUkVBRF9QUklWSUxFREdFIiwiV1JJVEVfUFJJVklMRURHRSJdLCJqdGkiOiJicFpjN0RadkhuSUFLSktGQTNsLUZDRkdHN2ciLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.B-Ir1Heb9qvzFcStpA03iblJkTbTZKJPjucES2Ekdew' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "amount": 99.0
+}'
+```
+
+Response:
+
+```json
+{
+    "message": "Bank Account Successfully Returned!",
+    "accounts": [
+        {
+            "id": "97b0529d-411d-44e3-986f-b7c9ed1fed01",
+            "accountHolderId": "f599c03b-a9a3-4518-b191-d1541771ce2c",
+            "creationDate": "2022-07-29T05:57:49.027+00:00",
+            "accountType": "CURRENT",
+            "balance": 200.0
+        }
+    ]
+}
+```
+
+# Get Account Holder based On Equity Type
+
+```sh
+curl --location --request GET 'http://localhost:2000/api/v1/bankAccountLookup/withBalance/GREATER_THAN/200' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwNzQ2NjIsInVzZXJfbmFtZSI6ImpvaG5kIiwiYXV0aG9yaXRpZXMiOlsiUkVBRF9QUklWSUxFREdFIiwiV1JJVEVfUFJJVklMRURHRSJdLCJqdGkiOiJicFpjN0RadkhuSUFLSktGQTNsLUZDRkdHN2ciLCJjbGllbnRfaWQiOiJzcHJpbmdiYW5rQ2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.B-Ir1Heb9qvzFcStpA03iblJkTbTZKJPjucES2Ekdew' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "amount": 99.0
+}'
+```
+
+Response:
+
+```json
+{
+    "message": "Successfully Returned 1 Bank Account(s)!",
+    "accounts": [
+        {
+            "id": "a9e3ab4f-6d9f-45ae-9134-346c53bf3a98",
+            "accountHolderId": "9bae0a74-4f13-4833-91e3-59fda3e59d06",
+            "creationDate": "2022-07-29T05:58:17.544+00:00",
+            "accountType": "CURRENT",
+            "balance": 300.0
+        }
+    ]
+}
+```
