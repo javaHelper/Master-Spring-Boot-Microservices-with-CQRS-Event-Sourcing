@@ -308,3 +308,8 @@ Response:
     ]
 }
 ```
+<img width="1261" alt="Screenshot 2022-07-29 at 11 40 33 AM" src="https://user-images.githubusercontent.com/54174687/181694263-05076437-d723-4e28-ac39-15f6bf84e3ad.png">
+
+<img width="781" alt="Screenshot 2022-07-29 at 11 40 43 AM" src="https://user-images.githubusercontent.com/54174687/181694312-71eac787-b598-434b-bb0c-5dfd6e440bfe.png">
+
+
